@@ -1,29 +1,45 @@
-# ProjectWebFrontend
 
-# FrontWeb
+# Proyecto de Desarrollo Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+Este proyecto tiene como objetivo el desarrollo de una aplicación web utilizando Angular para el frontend y Spring para el backend. La aplicación está diseñada para dos tipos de usuarios:
 
-## Development server
+## Usuario Administrador del Sistema:
+- Crear, editar y eliminar géneros musicales y sus canciones.
+- Realizar operaciones administrativas en la plataforma.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Usuario Votante:
+- Crear y activar cuentas en la plataforma.
+- Generar listas de canciones ordenadas por votos.
+- Buscar canciones y verificar listas por género musical.
+- Votar por sus canciones favoritas y eliminar sus votos.
 
-## Code scaffolding
+## Tecnologías Utilizadas
+- **JWT (JSON Web Tokens):** Para la autenticación segura de usuarios.
+- **JPA (Java Persistence API):** Para la interacción con la base de datos MySQL.
+- **Axios:** Para la comunicación entre el frontend y el backend.
+- **Jmeter:** Herramienta para realizar pruebas de carga y evaluar el rendimiento.
+- **SonarQube:** Utilizado para analizar y mejorar la calidad del código.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Estructura del Proyecto
+- **frontend/ :** Contiene el código fuente de la aplicación Angular.
+- **backend/ :** Contiene el código fuente de la aplicación Spring.
 
-## Build
+## Instrucciones de Ejecución
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Frontend:
+1. Navegue a la carpeta `frontend/`.
+2. Ejecute `ng serve` para iniciar el servidor de desarrollo de Angular.
+3. Abra [http://localhost:4200/](http://localhost:4200/) en su navegador para acceder al frontend.
 
-## Running unit tests
+### Backend:
+1. Navegue a la carpeta `backend/`.
+2. Ejecute la aplicación Spring Boot.
+3. Asegúrese de configurar la base de datos MySQL y ajustar las configuraciones de conexión.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Pruebas y Análisis
 
-## Running end-to-end tests
+- Utilice Jmeter para realizar pruebas de carga y evaluar el rendimiento del sistema.
+- Ejecute análisis de calidad de código con SonarQube para mejorar la mantenibilidad y seguridad.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Este proyecto tiene como objetivo cumplir con los requisitos establecidos y proporcionar una experiencia eficiente y segura para los usuarios administradores y votantes.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
