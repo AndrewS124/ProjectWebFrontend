@@ -15,38 +15,39 @@ export class ToolbarComponent {
     return this.authService.isAuthenticated();
   }
 
-  handleImagePerfilClick() {
-    this.router.navigate(['/perfil']);
-  }
-  
-
-  handleRegisterClick() {
-    // Implementa la lógica para el botón de registro
-  }
-
-  handleLoginClick() {
-    this.router.navigate(['/login']);
-  }
-
-  handleContactClick() {
-    // Implementa la lógica para el botón de contacto
-  }
-
-  handleAboutUsClick() {
-    // Implementa la lógica para el botón "Quiénes Somos"
+  handleImageClick() {
+    this.router.navigate(['/home']);
   }
 
   handleFunctionalityClick() {
     this.router.navigate(['/funcionamiento']);
   }
 
-  handleImageClick() {
-    this.router.navigate(['']);
+  handleAboutUsClick() {
+    // Implementa la lógica para el botón "Quiénes Somos"
+  }
+
+  handleContactClick() {
+    // Implementa la lógica para el botón de contacto
+  }
+  
+  handleLoginClick() {
+    this.router.navigate(['/login']);
   }
 
   handleLogout() {
     this.authService.logout(); 
     this.router.navigate(['/login']); 
   }
+
+  handleRegisterClick() {
+    this.router.navigate(['/register'])
+  }
+
+  handleImagePerfilClick() {
+    this.router.navigate(['/perfil']);
+  }
+ 
+  
 
 }
