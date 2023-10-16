@@ -1,0 +1,36 @@
+.scene {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79vh;
+    margin: 0;
+}
+
+.box {
+    width: 600px; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.scene2 {
+    text-align: center;
+    margin-top: -120px; /* Espacio entre la caja y el botón */
+  }
+  
+button {
+    background-color: #132231;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+  
+button:hover {
+    background-color: #193452;
+}

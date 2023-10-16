@@ -1,0 +1,30 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Cambia flex-start a center o flex-end según tu preferencia */
+  justify-content: center;
+  height: 100vh;
+  margin-top: -80px;
+}
+
+.profile p {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.logout-button {
+  background-color: #132231; /* Color de fondo del botón de cierre de sesión */
+  color: #fff; /* Color del texto del botón */
+  padding: 10px 20px;
+  border: 2px solid transparent; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #ffffff; /* Color de fondo del botón de cierre de sesión al pasar el mouse */
+  color: black;
+  border-color: #132231; 
+}

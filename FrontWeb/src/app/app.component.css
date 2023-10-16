@@ -1,0 +1,47 @@
+.scene {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espacio entre los cuadros */
+  }
+  
+  .box {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s;
+    position: relative; /* Habilita el posicionamiento relativo */
+    top: -100px; /* Mueve las cajas 20px hacia arriba */
+  }
+
+  .box:hover{
+    transform: scale(1.05);
+  }
+  
+  h2 {
+    text-align: left;
+    margin: 0; 
+  }
+  
+  h1 {
+    font-size: 36px; /* Tamaño de fuente del título */
+    text-align: center; /* Alineación del texto */
+    background-color: #132231; /* Color de fondo del título */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espacio interno para separar el título del contenido circundante */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra alrededor del título */
+    border-radius: 5px;
+  
+  }
+  

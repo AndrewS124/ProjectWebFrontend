@@ -1,0 +1,56 @@
+.toolbar {
+    position: fixed;
+    bottom: 40px;
+    left: 25%;
+    right: 25%;
+    background-color: #132231;
+    color: #fff;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.toolbar-content {
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid transparent; /* Agrega un borde transparente en el estado normal */
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-sizing: border-box; /* Evita que el borde afecte el tamaño del botón */
+}
+
+.toolbar-button:hover {
+    border-color: #ffffff; /* Cambia el color del borde en el estado hover */
+    border-radius: 15px;
+}
+
+
+.image-button {
+    background-color: #132231; 
+    color: #ffffff; 
+    border: 1px solid #132231; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, border 0.3s; 
+}
+
+.image-button:hover {
+    background-color: #fdfdfd;
+    cursor: pointer;
+}
+
+.image-button img {
+    width: 20px; 
+    height: auto; 
+}
+.spacer {
+    flex-grow: 1; /* Espacio entre grupos de botones */
+}
