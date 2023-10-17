@@ -17,6 +17,18 @@
   background-blend-mode: initial;
 }
 
+.container1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black; /* Your desired color */
+  border-radius: 5vh; /* Match the container's border-radius */
+  opacity: 0.3; /* Adjust the opacity as needed */
+}
+
 .container2 {
   position: relative;
   margin: 2vh 20vh 5vh;
@@ -25,39 +37,49 @@
   width: 180vh;
   height: 80vh;
   background-image: url('src/assets/imagenes/persona2home.jpg');
+  background-color: black;
   background-size: contain;
   background-position: center;
   background-blend-mode: initial;
 }
+.container2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black; /* Your desired color */
+  border-radius: 5vh; /* Match the container's border-radius */
+  opacity: 0.3; /* Adjust the opacity as needed */
+}
 
-.box {
-  width: 300px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+mat-card-title {
   text-align: center;
-  transition: transform 0.3s;
-  position: relative; /* Habilita el posicionamiento relativo */
-  top: -100px; /* Mueve las cajas 20px hacia arriba */
+  margin: 10vh 12vh;
+  padding: 10vh;
+  width: 50vh;
+  height: 40vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem;
+  color: #333; /* Adjust text color as needed */
 }
 
-.box:hover {
-  transform: scale(1.05);
-}
 
-h2 {
-  text-align: left;
-  margin: 0;
-}
-
-.buttonHome{
+.buttonHome {
   padding: 10vh;
   position: absolute;
   font-size: 1rem;
-  background-color: darkgreen;
+  background-color: #232323;
   color: white;
   bottom: 6vh;
   left: 65%;
+  border-radius: 2vh;
 }
 
 

@@ -1,15 +1,22 @@
 body {
-    background-image: url('./assets/imagenes/music_icono.png');
-    background-size: 45%;
-    background-attachment: fixed;
-  }
-  
-  .box {
-    position: relative;
-    z-index: 2; /* Un valor mayor que el de la imagen de fondo */
-    background-color: white; /* Fondo blanco para las cajas */
-    /* Otros estilos para las cajas */
-  }
-  
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  background-image: url('./assets/imagenes/music_icono.png');
+  background-color: #232323;
+  background-size: 45%;
+  background-attachment: fixed;
+}
+
+.box {
+  position: relative;
+  z-index: 2; /* Un valor mayor que el de la imagen de fondo */
+  background-color: white; /* Fondo blanco para las cajas */
+  /* Otros estilos para las cajas */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
