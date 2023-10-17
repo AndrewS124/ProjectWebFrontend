@@ -26,4 +26,7 @@
   flex-grow: 1; /* Espacio entre grupos de botones */
 }
 
+.music-list{
+  color: white;
+}
 
