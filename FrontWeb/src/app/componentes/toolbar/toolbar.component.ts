@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.css']
+  styleUrls: ['./toolbar.component.css'],
 })
 export class ToolbarComponent {
 
@@ -30,14 +33,14 @@ export class ToolbarComponent {
   handleContactClick() {
     // Implementa la lógica para el botón de contacto
   }
-  
+
   handleLoginClick() {
     this.router.navigate(['/login']);
   }
 
   handleLogout() {
-    this.authService.logout(); 
-    this.router.navigate(['/login']); 
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 
   handleRegisterClick() {
@@ -47,7 +50,7 @@ export class ToolbarComponent {
   handleImagePerfilClick() {
     this.router.navigate(['/perfil']);
   }
- 
-  
+
+
 
 }

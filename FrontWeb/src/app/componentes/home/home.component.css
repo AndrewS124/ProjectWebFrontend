@@ -1,38 +1,64 @@
 .scene {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Espacio entre los cuadros */
-  }
-  
-  .box {
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    transition: transform 0.3s;
-    position: relative; /* Habilita el posicionamiento relativo */
-    top: -100px; /* Mueve las cajas 20px hacia arriba */
-  }
+  display: flex;
+  margin: 4vh;
+  flex-direction: column;
+}
 
-  .box:hover{
-    transform: scale(1.05);
-  }
-  
-  h2 {
-    text-align: left;
-    margin: 0; 
-  }
-  
+.container1 {
+  position: relative;
+  margin: 2vh 2vh 5vh;
+  display: flex;
+  border-radius: 5vh;
+  width: 180vh;
+  height: 80vh;
+  background-image: url('src/assets/imagenes/persona1home.jpg');
+  background-size: contain;
+  background-position: center;
+  background-blend-mode: initial;
+}
 
-  
+.container2 {
+  position: relative;
+  margin: 2vh 20vh 5vh;
+  display: flex;
+  border-radius: 5vh;
+  width: 180vh;
+  height: 80vh;
+  background-image: url('src/assets/imagenes/persona2home.jpg');
+  background-size: contain;
+  background-position: center;
+  background-blend-mode: initial;
+}
+
+.box {
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative; /* Habilita el posicionamiento relativo */
+  top: -100px; /* Mueve las cajas 20px hacia arriba */
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  text-align: left;
+  margin: 0;
+}
+
+.buttonHome{
+  padding: 10vh;
+  position: absolute;
+  font-size: 1rem;
+  background-color: darkgreen;
+  color: white;
+  bottom: 6vh;
+  left: 65%;
+}
+
+
+

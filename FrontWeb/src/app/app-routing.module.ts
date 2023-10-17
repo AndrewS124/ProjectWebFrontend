@@ -8,10 +8,11 @@ import { RegisterComponent } from './componentes/register/register.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
+  { path: 'login', component: LoginComponent },
   { path: 'funcionamiento', component: FuncionamientoComponent},
     //quienes somos
     //contacto
-  { path: 'login', component: LoginComponent },
+
   { path: 'register', component: RegisterComponent},
   { path: 'perfil', component: PerfilComponent },
 ];

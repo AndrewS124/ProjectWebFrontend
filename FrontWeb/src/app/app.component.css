@@ -1,9 +1,9 @@
 h1 {
-  font-size: 36px; 
-  text-align: center; 
-  background-color: #132231; 
-  color: white; 
-  padding: 10px; 
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
-  border-radius: 5px;
+  font-size: 5vh;
+  text-align: center;
+  background-color: #132231;
+  color: white;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-family: "Felix Titling";
 }
