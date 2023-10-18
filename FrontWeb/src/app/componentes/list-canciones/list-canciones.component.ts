@@ -10,6 +10,8 @@ import { CancionService } from 'src/app/services/canciones.service';
 export class ListCancionesComponent implements OnInit{
 
   canciones: any[] = [];
+  searchText: string = '';
+
 
   constructor( private router: Router,private cancionService: CancionService){}
 

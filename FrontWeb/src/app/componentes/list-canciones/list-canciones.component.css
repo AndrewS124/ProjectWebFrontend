@@ -86,7 +86,7 @@ mat-card-title {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px; /* Espacio entre las canciones */
+  gap: 20px;
   padding: 20px;
 }
 
@@ -98,8 +98,8 @@ mat-card-title {
   text-align: center;
   transition: transform 0.3s;
   position: relative;
-  top: -10px; /* Mueve las cajas 10px hacia arriba */
-  background-color: #f4f4f4; /* Cambia el color de fondo como desees */
+  top: -10px;
+  background-color: #f4f4f4;
 }
 
 .cancion-box:hover {
@@ -111,7 +111,20 @@ h2 {
   margin: 0;
 }
 
-/* Puedes agregar más estilos según tus necesidades */
+.search-bar {
+  text-align: center;
+  padding: 20px;
+}
+
+.search-bar input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
 
 
 
