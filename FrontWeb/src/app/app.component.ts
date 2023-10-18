@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.router.navigate(['/home']); //poner como principal /home :c
+    this.router.navigate(['/login']); //poner como principal /home :c
 
   }
 

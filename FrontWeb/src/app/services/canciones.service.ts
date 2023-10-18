@@ -11,11 +11,12 @@ interface Genero {
   providedIn: 'root'
 })
 export class CancionService {
-  private baseUrl = 'http://127.0.0.1:8080/Cancion/'; // Reemplaza con la URL de tu servidor
+  private urlApi = 'http://localhost:8080/Cancion/';
+
 
   constructor(private http: HttpClient) { }
 
-  obtenerCanciones(): Observable<any> {
-    return this.http.get(this.baseUrl);
+  public getCanciones(): Observable<any>{
+    return this.http.get<any>(this.urlApi);
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
+import { ListCancionesComponent } from './componentes/list-canciones/list-canciones.component';
+import { ListGenerosComponent } from './componentes/list-generos/list-generos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import {MatCardModule} from "@angular/material/card";
     PerfilComponent,
     FuncionamientoComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ListCancionesComponent,
+    ListGenerosComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,7 @@ import {MatCardModule} from "@angular/material/card";
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
