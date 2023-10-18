@@ -1,1 +1,13 @@
-<p>list-canciones works!</p>
+<section class="scene">
+  <div class="canciones-lista">
+    <div *ngFor="let cancion of canciones">
+      <mat-card class="cancion-box">
+        <mat-card-content>
+          <p>Nombre de la canción: {{ cancion.nombre }}</p>
+          <p>Autor: {{ cancion.autor }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
