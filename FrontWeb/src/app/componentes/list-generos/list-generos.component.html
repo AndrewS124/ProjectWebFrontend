@@ -1,1 +1,16 @@
-<p>list-generos works!</p>
+<div class="scene">
+  <ng-container *ngFor="let genero of generos">
+    <h2>{{ genero.tipo }}</h2>
+    <div class="canciones-lista">
+      <div *ngFor="let cancion of genero.canciones">
+        <mat-card class="cancion-box">
+          <mat-card-content>
+            <p>Nombre de la canción: {{ cancion.nombre_cancion }}</p>
+            <p>Autor: {{ cancion.autor }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </ng-container>
+</div>
+

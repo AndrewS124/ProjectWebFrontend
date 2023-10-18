@@ -2,10 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-interface Genero {
-  id: number;
-  nombre: string;
-}
+
 
 @Injectable({
   providedIn: 'root'
