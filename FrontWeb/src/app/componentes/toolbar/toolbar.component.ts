@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -12,10 +13,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 })
 export class ToolbarComponent {
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService,  private alertService: AlertService) {}
 
-  isAuthenticated() {
-    return this.authService.isAuthenticated();
+  isAuthenticated(): boolean {
+    return this.authService.isAuthenticated;
   }
 
   handleImageClick() {
@@ -39,7 +40,7 @@ export class ToolbarComponent {
   }
 
   handleLogout() {
-    this.authService.logout();
+    //this.authService.logout();
     this.router.navigate(['/login']);
   }
 

@@ -1,0 +1,57 @@
+.scene {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79vh;
+    margin: 0;
+}
+
+.registro-box{
+    width: 300px; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s;
+    background-color: rgba(255, 255, 255, 1);
+
+}
+
+.registro-box:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; 
+    padding: 10px 0px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #132231;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #193452;
+}

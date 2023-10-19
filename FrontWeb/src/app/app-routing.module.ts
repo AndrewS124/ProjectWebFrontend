@@ -7,9 +7,10 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { RegisterComponent } from './componentes/register/register.component';
 import { ListCancionesComponent } from './componentes/list-canciones/list-canciones.component';
 import { ListGenerosComponent } from './componentes/list-generos/list-generos.component';
+import { AuthGuard } from './componentes/toolbar/auth.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'funcionamiento', component: FuncionamientoComponent},
     //quienes somos

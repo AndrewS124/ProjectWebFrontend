@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class UsuarioVotanteService {
 
-  constructor() { }
+  private urlApi = 'http://localhost:8080/UsuarioVotante/';
+
+  constructor(private http: HttpClient) { }
+
+  registerUser(newUser: any) {
+    return this.http.post(this.urlApi, newUser);
+  }
 }

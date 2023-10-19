@@ -13,7 +13,7 @@ export class FilterCancionesPipe implements PipeTransform {
     searchText = searchText.toLowerCase();
 
     return canciones.filter(cancion => {
-      return cancion.nombre.toLowerCase().includes(searchText);
+      return cancion.nombreCancion.toLowerCase().includes(searchText);
     });
   }
 }

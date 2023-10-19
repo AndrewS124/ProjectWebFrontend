@@ -20,6 +20,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ListCancionesComponent } from './componentes/list-canciones/list-canciones.component';
 import { ListGenerosComponent } from './componentes/list-generos/list-generos.component';
+import { AlertComponent } from './componentes/alert/alert.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { ListGenerosComponent } from './componentes/list-generos/list-generos.co
     RegisterComponent,
     ListCancionesComponent,
     ListGenerosComponent,
-    FilterCancionesPipe
+    FilterCancionesPipe,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { ListGenerosComponent } from './componentes/list-generos/list-generos.co
     MatIconModule,
     MatCardModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
