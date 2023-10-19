@@ -22,6 +22,7 @@ import { ListCancionesComponent } from './componentes/list-canciones/list-cancio
 import { ListGenerosComponent } from './componentes/list-generos/list-generos.component';
 import { AlertComponent } from './componentes/alert/alert.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AdminComponent } from './componentes/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ListCancionesComponent,
     ListGenerosComponent,
     FilterCancionesPipe,
-    AlertComponent
+    AlertComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

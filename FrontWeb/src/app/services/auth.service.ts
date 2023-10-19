@@ -7,6 +7,10 @@ import { map } from 'rxjs';
 })
 export class AuthService {
   isAuthenticated: boolean = false;
+  tipoUsuarioLogged: String = '';
+
+  usuarioData: { nombre: string, correo: string } | null = null; // Agregamos la propiedad para almacenar el nombre y el correo
+
 
   constructor(private usuarioService: UsuarioService) {}
 
@@ -15,6 +19,8 @@ export class AuthService {
       map((usuarios: any[]) => {
         const user = usuarios.find((u) => u.nombre === username && u.contraseña === password);
         if (user) {
+          this.tipoUsuarioLogged = user.tipo;
+          this.usuarioData = { nombre: user.nombre, correo: user.correo };
           this.isAuthenticated = true; 
           return true;
         } else {
@@ -30,5 +36,12 @@ export class AuthService {
   }
 
 
+  tipoUsuario(){
+    return this.tipoUsuarioLogged;
+  }
 
+  getUsuarioData(): { nombre: string, correo: string } | null {
+    return this.usuarioData;
+  }
+ 
 }

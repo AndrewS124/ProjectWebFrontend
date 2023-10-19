@@ -20,8 +20,13 @@
         <button mat-icon-button (click)="handleImagePerfilClick()">
           <mat-icon>account_circle</mat-icon>
         </button>
+        <button mat-icon-button *ngIf="tipoUsuario() == 'Admin'" (click)="handleAdminButton()">
+          <mat-icon>admin_panel_settings</mat-icon>
+        </button>
       </ng-container>
-
+      
+      
+      
       <ng-template #authButtons>
         <button mat-button (click)="handleLoginClick()">Iniciar Sesión</button>
         <button mat-button (click)="handleRegisterClick()">Registrarse</button>

@@ -25,7 +25,7 @@ export class RegisterComponent {
       contraseña: this.password,
       correo: this.correo,
       autenticacion: true,
-      tipo: 'votante',
+      tipo: 'Votante',
       activacion: true,
     };
     

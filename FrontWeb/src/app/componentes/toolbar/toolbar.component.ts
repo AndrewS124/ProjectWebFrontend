@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
@@ -12,15 +9,30 @@ import { AlertService } from 'src/app/services/alert.service';
   styleUrls: ['./toolbar.component.css'],
 })
 export class ToolbarComponent {
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private alertService: AlertService
+  ) {}
 
-  constructor(private router: Router, private authService: AuthService,  private alertService: AlertService) {}
+  tipoUsuario(): String {
+    return this.authService.tipoUsuario(); // Llama al método del servicio para obtener el tipo de usuario
+  }
 
   isAuthenticated(): boolean {
     return this.authService.isAuthenticated;
   }
 
+  handleAdminButton() {
+    this.router.navigate(['/admin']);
+  }
+
   handleImageClick() {
-    this.router.navigate(['/home']);
+    if(this.isAuthenticated()==false){
+      this.alertService.openAlert('Porfavor inicia sesion o registrate.');
+    }else{
+      this.router.navigate(['/home']);
+    }
   }
 
   handleFunctionalityClick() {
@@ -40,18 +52,15 @@ export class ToolbarComponent {
   }
 
   handleLogout() {
-    //this.authService.logout();
+    // this.authService.logout();
     this.router.navigate(['/login']);
   }
 
   handleRegisterClick() {
-    this.router.navigate(['/register'])
+    this.router.navigate(['/register']);
   }
 
   handleImagePerfilClick() {
     this.router.navigate(['/perfil']);
   }
-
-
-
 }
