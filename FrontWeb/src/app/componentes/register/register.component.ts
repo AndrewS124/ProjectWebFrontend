@@ -20,6 +20,7 @@ export class RegisterComponent {
   ) {}
 
   handleRegister() {
+    
     const newUser = {
       nombre: this.usuario,
       contraseña: this.password,
@@ -28,15 +29,15 @@ export class RegisterComponent {
       tipo: 'Votante',
       activacion: true,
     };
-    
 
     this.usuarioVService.registerUser(newUser).subscribe(
       (response) => {
-       
-        this.authService.isAuthenticated = true;
+        this.authService.setUsuarioData({ nombre: newUser.nombre, correo: newUser.correo });
 
+        this.authService.isAuthenticated = true;
         this.router.navigate(['/home']);
 
+        // Limpia los campos del formulario
         this.usuario = '';
         this.password = '';
         this.correo = '';
@@ -45,5 +46,5 @@ export class RegisterComponent {
         console.error('Error de registro:', error);
       }
     );
-  } 
+  }
 }

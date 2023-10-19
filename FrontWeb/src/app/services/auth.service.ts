@@ -8,6 +8,7 @@ import { map } from 'rxjs';
 export class AuthService {
   isAuthenticated: boolean = false;
   tipoUsuarioLogged: String = '';
+  
 
   usuarioData: { nombre: string, correo: string } | null = null; // Agregamos la propiedad para almacenar el nombre y el correo
 
@@ -38,6 +39,10 @@ export class AuthService {
 
   tipoUsuario(){
     return this.tipoUsuarioLogged;
+  }
+
+  setUsuarioData(usuarioData: { nombre: string, correo: string } ) {
+    this.usuarioData = usuarioData;
   }
 
   getUsuarioData(): { nombre: string, correo: string } | null {
