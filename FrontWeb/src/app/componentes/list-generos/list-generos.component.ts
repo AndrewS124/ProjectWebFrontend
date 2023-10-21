@@ -7,22 +7,21 @@ import { GenerosService } from 'src/app/services/generos.service';
   templateUrl: './list-generos.component.html',
   styleUrls: ['./list-generos.component.css']
 })
-export class ListGenerosComponent implements OnInit{
+export class ListGenerosComponent implements OnInit {
   generos: any[] = [];
   searchText: string = '';
 
-
-  constructor( private router: Router,private generoService: GenerosService){}
+  constructor(private router: Router, private generoService: GenerosService) {}
 
   ngOnInit() {
-    this.llenarDta();
+    this.llenarData();
   }
 
-  llenarDta(){
-    this.generoService.getGeneros().subscribe(generos => {
-      this.generos =  generos;
+  llenarData() {
+    this.generoService.getGenerosConCanciones().subscribe(data => {
+      this.generos = data;
       console.log(this.generos);
-    })
+    });
   }
-
 }
+

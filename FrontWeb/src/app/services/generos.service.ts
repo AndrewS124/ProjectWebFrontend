@@ -32,5 +32,10 @@ export class GenerosService {
       })
     );
   }
-  
+  public getGenerosConCanciones(): Observable<any[]> {
+    // Modifica la URL para obtener tanto géneros como canciones
+    const url = `${this.urlApi}?include=canciones`;
+    return this.http.get<any[]>(url);
+  }
+
 }
