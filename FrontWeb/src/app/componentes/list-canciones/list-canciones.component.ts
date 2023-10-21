@@ -3,30 +3,18 @@ import { Router } from '@angular/router';
 import { CancionService } from 'src/app/services/canciones.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-list-canciones',
+  templateUrl: './list-canciones.component.html',
+  styleUrls: ['./list-canciones.component.css']
 })
-export class HomeComponent implements OnInit {
-handleGeneros() {
-  this.router.navigate(['/generos']);
-}
-  
+export class ListCancionesComponent implements OnInit{
 
-
-  mostrarListaCanciones = false;
-  mostrarListaGeneros = false;
-
-  // Otras propiedades, como canciones y cancionesPorGenero, deben definirse y llenarse con datos
   canciones: any[] = [];
+  searchText: string = '';
+
 
   constructor( private router: Router,private cancionService: CancionService){}
 
-  
-  handleCanciones() {
-    this.router.navigate(['/canciones']);
-  }
-  
   ngOnInit() {
     this.llenarDta();
   }
@@ -38,6 +26,4 @@ handleGeneros() {
     })
   }
 
-
 }
-

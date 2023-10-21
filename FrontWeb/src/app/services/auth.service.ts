@@ -1,20 +1,52 @@
 import { Injectable } from '@angular/core';
+import { UsuarioService } from './usuario.service';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isLoggedIn = false;
+  isAuthenticated: boolean = false;
+  tipoUsuarioLogged: String = '';
+  
 
-  login() {
-    this.isLoggedIn = true;
+  usuarioData: { nombre: string, correo: string } | null = null; // Agregamos la propiedad para almacenar el nombre y el correo
+
+
+  constructor(private usuarioService: UsuarioService) {}
+
+  authenticate(username: string, password: string) {
+    return this.usuarioService.getAllUsuarios().pipe(
+      map((usuarios: any[]) => {
+        const user = usuarios.find((u) => u.nombre === username && u.contraseña === password);
+        if (user) {
+          this.tipoUsuarioLogged = user.tipo;
+          this.usuarioData = { nombre: user.nombre, correo: user.correo };
+          this.isAuthenticated = true; 
+          return true;
+        } else {
+          this.isAuthenticated = false;
+          return false; 
+        }
+      })
+    );
   }
 
   logout() {
-    this.isLoggedIn = false;
+    this.isAuthenticated = false;
   }
 
-  isAuthenticated() {
-    return this.isLoggedIn;
+
+  tipoUsuario(){
+    return this.tipoUsuarioLogged;
   }
+
+  setUsuarioData(usuarioData: { nombre: string, correo: string } ) {
+    this.usuarioData = usuarioData;
+  }
+
+  getUsuarioData(): { nombre: string, correo: string } | null {
+    return this.usuarioData;
+  }
+ 
 }

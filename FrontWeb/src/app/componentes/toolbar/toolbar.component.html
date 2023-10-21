@@ -1,33 +1,3 @@
-<!--
-<div class="toolbar">
-  <div class="toolbar-content">
-    <button class="image-button" (click)="handleImageClick()">
-      <img src="assets/imagenes/music_icono.png" alt="Imagen del botón"/>
-    </button>
-
-    <div class="spacer"></div>
-
-    <button class="toolbar-button" (click)="handleFunctionalityClick()">Funcionamiento</button>
-    <button class="toolbar-button" (click)="handleAboutUsClick()">Quiénes Somos</button>
-    <button class="toolbar-button" (click)="handleContactClick()">Contáctenos</button>
-
-    <div class="spacer"></div>
-
-    <ng-container *ngIf="isAuthenticated(); else authButtons">
-      <button class="image-button" (click)="handleImagePerfilClick()">
-        <img src="assets/imagenes/imagen-perfil.png" alt="Imagen del botón"/>
-      </button>
-    </ng-container>
-
-    <ng-template #authButtons>
-      <button class="toolbar-button" (click)="handleLoginClick()">Iniciar Sesión</button>
-      <button class="toolbar-button" (click)="handleRegisterClick()">Registrarse</button>
-    </ng-template>
-  </div>
-</div>
--->
-
-<!-- app.component.html -->
 <section class="toolbar-container">
   <mat-toolbar class="toolbar">
     <div class="toolbar-content">
@@ -50,8 +20,13 @@
         <button mat-icon-button (click)="handleImagePerfilClick()">
           <mat-icon>account_circle</mat-icon>
         </button>
+        <button mat-icon-button *ngIf="tipoUsuario() == 'Admin'" (click)="handleAdminButton()">
+          <mat-icon>admin_panel_settings</mat-icon>
+        </button>
       </ng-container>
-
+      
+      
+      
       <ng-template #authButtons>
         <button mat-button (click)="handleLoginClick()">Iniciar Sesión</button>
         <button mat-button (click)="handleRegisterClick()">Registrarse</button>

@@ -2,61 +2,20 @@
   <mat-card class="container1">
     <mat-card-header>
       <mat-card-title>Descubre las últimas canciones de nuestra votación</mat-card-title>
+
     </mat-card-header>
     <mat-card-footer align="end">
-      <button mat-raised-button class="buttonHome" (click)="mostrarCanciones()">Explora las CANCIONES</button>
+      <button mat-raised-button class="buttonHome" (click)="handleCanciones()">Explora las CANCIONES</button>
     </mat-card-footer>
-    <div class="canciones-lista" *ngIf="mostrarListaCanciones">
-      <div *ngFor="let cancion of canciones">
-        <mat-card class="cancion-box">
-          <mat-card-content>
-            <p>Nombre de la canción: {{ cancion.nombre }}</p>
-            <p>Autor: {{ cancion.autor }}</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
   </mat-card>
 
   <mat-card class="container2">
     <mat-card-header>
-      <mat-card-title>Descubre los últimos géneros de nuestra votación</mat-card-title>
+      <mat-card-title>Descubre los últimos generos de nuestra votación</mat-card-title>
+
     </mat-card-header>
     <mat-card-footer align="end">
-      <button mat-raised-button class="buttonHome" (click)="mostrarGeneros()">Explora los GENEROS</button>
+      <button mat-raised-button class="buttonHome" (click)="handleGeneros()">Explora los GENEROS</button>
     </mat-card-footer>
-    <div class="generos-lista" *ngIf="mostrarListaGeneros">
-      <!--
-      <div *ngFor="let cancion of cancionesPorGenero">
-        <mat-card class="cancion-box">
-          <mat-card-content>
-            <p>Nombre de la canción: {{ cancion.nombre }}</p>
-            <p>Género: {{ cancion.genero }}</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    -->
-    </div>
   </mat-card>
 </section>
-
-<!--
-<div class="scene" id="scene">
-  <div class="container">
-    <div class="box-container">
-      <div class="box" id="cancionesBox">
-        <h2>Canciones</h2>
-
-      </div>
-    </div>
-    <div class="box-container">
-      <div class="box" id="generosBox">
-        <h2>Géneros</h2>
-         Contenido del cuadro de "Géneros"
-      </div>
-    </div>
-  </div>
-</div>
--->
-
-

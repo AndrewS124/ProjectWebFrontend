@@ -1,1 +1,12 @@
-<p>register works!</p>
+<div class="scene" id="scene">
+    <div class="registro-box" id="Box">
+        <h2>Music List</h2>
+        <label for="usuario">User</label>
+        <input type="text" id="usuario" name="usuario" [(ngModel)]="usuario" placeholder="User">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Password">
+        <label for="correo">Email</label>
+        <input type="text" id="correo" name="correo" [(ngModel)]="correo" placeholder="Email">
+        <button type="submit" (click)="handleRegister()">Registrar</button>
+    </div>
+</div>

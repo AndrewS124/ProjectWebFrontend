@@ -11,9 +11,20 @@ export class PerfilComponent {
 
   constructor(private router: Router, private authService: AuthService) {}
 
+  nombreUsuario: string = '';
+  correoUsuario: string = '';
+
+  ngOnInit(): void {
+    const usuarioData = this.authService.getUsuarioData();
+    if (usuarioData) {
+      this.nombreUsuario = usuarioData.nombre;
+      this.correoUsuario = usuarioData.correo;
+    }
+  }
+
   handleLogout(){
     this.authService.logout();
-    this.router.navigate(['']);
+    this.router.navigate(['/login']);
   }
 
 }

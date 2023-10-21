@@ -1,0 +1,16 @@
+<section class="scene">
+  <!-- Agregar la barra de búsqueda -->
+  <div class="search-bar">
+    <input [(ngModel)]="searchText" placeholder="Buscar canciones" />
+  </div>
+  <div class="canciones-lista">
+    <div *ngFor="let cancion of canciones | filterCanciones: searchText">
+      <mat-card class="cancion-box">
+        <mat-card-content>
+          <p>Nombre de la canción: {{ cancion.nombreCancion }}</p>
+          <p>Autor: {{ cancion.autor }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

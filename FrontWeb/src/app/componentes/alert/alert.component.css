@@ -1,0 +1,12 @@
+.alert-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 350px;
+  height: 80px;
+}
+
+.alert-content {
+  text-align: center;
+  font-weight: bold;
+}

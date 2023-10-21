@@ -1,21 +1,37 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
-interface Genero {
-  id: number;
-  nombre: string;
-}
+import { Observable, map } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CancionService {
-  private baseUrl = 'http://127.0.0.1:8080/Cancion/'; // Reemplaza con la URL de tu servidor
+  private urlApi = 'http://localhost:8080/Cancion/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  obtenerCanciones(): Observable<any> {
-    return this.http.get(this.baseUrl);
+  public getCanciones(): Observable<any> {
+    return this.http.get<any>(this.urlApi);
   }
+
+  public agregarCancion(nombreCancion: string, autor: string): Observable<any> {
+    const nuevaCancion = { nombreCancion, autor };
+    return this.http.post(this.urlApi, nuevaCancion);
+  }
+
+  public eliminarCancion(id: number): Observable<any> {
+    const url = this.urlApi + id;
+    return this.http.delete(url);
+  }
+
+  public obtenerIdCancionPorNombre(nombreCancion: string): Observable<number | null> {
+    return this.getCanciones().pipe(
+      map((canciones: any[]) => {
+        const cancionEncontrada = canciones.find((cancion) => cancion.nombreCancion === nombreCancion);
+        return cancionEncontrada ? cancionEncontrada.id : null;
+      })
+    );
+  }
+  
+  
 }
