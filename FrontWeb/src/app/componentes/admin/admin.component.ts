@@ -13,6 +13,7 @@ export class AdminComponent {
   tipo: string = '';
   nombreEliminarCancion: string = '';
   nombreEliminarGenero: string = '';
+  divVisible: string = ''; // Agrega una variable para controlar la visibilidad de los divs
 
   constructor(private cancionService: CancionService, private generosService: GenerosService) {}
 
@@ -31,7 +32,7 @@ export class AdminComponent {
 
   eliminarCancion() {
     const nombreCancionAEliminar = this.nombreEliminarCancion;
-  
+
     if (nombreCancionAEliminar) {
       this.cancionService.obtenerIdCancionPorNombre(nombreCancionAEliminar).subscribe(
         (idCancionAEliminar) => {
@@ -57,7 +58,7 @@ export class AdminComponent {
       console.error('Nombre de canción no válido. Ingresa un nombre válido.');
     }
   }
-  
+
 
   agregarGenero() {
     if (this.tipo) {
@@ -102,5 +103,10 @@ export class AdminComponent {
     } else {
       console.error('Tipo de género no válido. Ingresa un tipo válido.');
     }
+  }
+
+  // Agrega la función para mostrar/ocultar los divs
+  mostrarDiv(divId: string) {
+    this.divVisible = divId;
   }
 }
