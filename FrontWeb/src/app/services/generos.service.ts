@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
+import { CancionService } from './canciones.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable, map } from 'rxjs';
 export class GenerosService {
   private urlApi = 'http://127.0.0.1:8080/Genero/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cancionService: CancionService) {}
 
   public getGeneros(): Observable<any> {
     return this.http.get<any>(this.urlApi);
@@ -32,10 +33,12 @@ export class GenerosService {
       })
     );
   }
-  public getGenerosConCanciones(): Observable<any[]> {
-    // Modifica la URL para obtener tanto géneros como canciones
-    const url = `${this.urlApi}?include=canciones`;
+
+
+  public obtenerCancionesPorGenero(generoId: number): Observable<any[]> {
+    const url = `${this.urlApi}${generoId}/canciones`;
     return this.http.get<any[]>(url);
   }
+
 
 }

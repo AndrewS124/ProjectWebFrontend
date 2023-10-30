@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { forkJoin } from 'rxjs';
 import { GenerosService } from 'src/app/services/generos.service';
 
 @Component({
   selector: 'app-list-generos',
   templateUrl: './list-generos.component.html',
-  styleUrls: ['./list-generos.component.css']
+  styleUrls: ['./list-generos.component.css'],
 })
 export class ListGenerosComponent implements OnInit {
   generos: any[] = [];
@@ -18,10 +19,15 @@ export class ListGenerosComponent implements OnInit {
   }
 
   llenarData() {
-    this.generoService.getGenerosConCanciones().subscribe(data => {
-      this.generos = data;
-      console.log(this.generos);
+    this.generoService.getGeneros().subscribe((generos) => {
+      this.generos = generos;
+      const observables = this.generos.map((genero) => this.generoService.obtenerCancionesPorGenero(genero.id));
+
+      forkJoin(observables).subscribe((canciones) => {
+        canciones.forEach((cancionesPorGenero, index) => {
+          this.generos[index].canciones = cancionesPorGenero;
+        });
+      });
     });
   }
 }
-
