@@ -1,11 +1,19 @@
 <div class="profile">
-    <!-- Información del usuario -->
-    <div class="user-info">
-      <p>Nombre: <span id="nombre">{{ nombreUsuario }}</span></p>
-      <p>Correo: <span id="correo">{{ correoUsuario }}</span></p>
+  <!-- Información del usuario -->
+  <div class="user-info">
+    <mat-icon class="custom-icon">mi-icono</mat-icon>
+    <div class="user-details">
+      <div class="user-detail">
+        <label>Nombre:</label>
+        <p><span id="nombre">{{ nombreUsuario }}</span></p>
+      </div>
+      <div class="user-detail">
+        <label>Correo:</label>
+        <p><span id="correo">{{ correoUsuario }}</span></p>
+      </div>
     </div>
-  
-    <!-- Botón de cierre de sesión -->
-    <button class="logout-button" (click)="handleLogout()">Cerrar Sesión</button>
   </div>
-  
+
+  <!-- Botón de cierre de sesión -->
+  <button class="logout-button" (click)="handleLogout()">Cerrar Sesión</button>
+</div>

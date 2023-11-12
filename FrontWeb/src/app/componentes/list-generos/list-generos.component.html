@@ -1,16 +1,10 @@
 <div class="scene">
   <ng-container *ngFor="let genero of generos">
-    <h2>{{ genero.tipo }}</h2>
-    <div class="canciones-lista">
-      <div *ngFor="let cancion of genero.canciones">
-        <mat-card class="cancion-box">
-          <mat-card-content>
-            <p>Nombre de la canción: {{ cancion.nombreCancion }}</p>
-            <p>Autor: {{ cancion.autor }}</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
+    <h2 (click)="toggleCanciones(genero)">{{ genero.tipo }}</h2>
+    <ul class="canciones-lista" *ngIf="genero.mostrarCanciones">
+      <li *ngFor="let cancion of genero.canciones">
+        <p><strong>Nombre de la canción:</strong> {{ cancion.nombreCancion }}</p>
+      </li>
+    </ul>
   </ng-container>
 </div>
-

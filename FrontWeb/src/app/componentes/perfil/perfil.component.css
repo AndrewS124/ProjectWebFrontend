@@ -1,31 +1,27 @@
 .profile {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   height: 100vh;
   margin-top: -80px;
 }
 
-.profile p {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
 
 .user-info{
   width: 100;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 10px;
-  border: 5px solid; 
+  border: 5px solid;
   border-color: rgb(18, 18, 18);
 }
 
 
 .logout-button {
-  background-color: #132231; 
-  color: #fff; 
+  background-color: #132231;
+  color: #fff;
   padding: 10px 20px;
-  border: 2px solid transparent; 
+  border: 2px solid transparent;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
@@ -36,5 +32,32 @@
 .logout-button:hover {
   background-color: #ffffff;
   color: black;
-  border-color: #132231; 
+  border-color: #132231;
 }
+.custom-icon {
+  width: 50px;
+  height: 50px;
+  background-image: url('src/assets/imagenes/user-solid.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 20px; /* Ajusta el espacio entre el ícono y los detalles del usuario */
+}
+.user-details {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.user-detail {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+

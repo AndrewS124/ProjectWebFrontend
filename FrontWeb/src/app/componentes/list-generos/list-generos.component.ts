@@ -21,6 +21,11 @@ export class ListGenerosComponent implements OnInit {
   llenarData() {
     this.generoService.getGeneros().subscribe((generos) => {
       this.generos = generos;
+      // Agregar la propiedad mostrarCanciones a cada género
+      this.generos.forEach((genero) => {
+        genero.mostrarCanciones = false;
+      });
+
       const observables = this.generos.map((genero) => this.generoService.obtenerCancionesPorGenero(genero.id));
 
       forkJoin(observables).subscribe((canciones) => {
@@ -30,4 +35,10 @@ export class ListGenerosComponent implements OnInit {
       });
     });
   }
+
+  toggleCanciones(genero: any) {
+    genero.mostrarCanciones = !genero.mostrarCanciones;
+  }
+
+
 }

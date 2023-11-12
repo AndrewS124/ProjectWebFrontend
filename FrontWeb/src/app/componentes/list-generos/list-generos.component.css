@@ -2,7 +2,9 @@
   display: flex;
   margin: 4vh;
   flex-direction: column;
+  border-radius: 15px; /* Ajusta el valor según tu preferencia */
 }
+
 
 .container1 {
   position: relative;
@@ -84,16 +86,18 @@ mat-card-title {
 
 .canciones-lista {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  gap: 20px; /* Ajusta el espacio entre las canciones */
   padding: 20px;
+  margin: 10px; /* Añade margen para separar los elementos */
 }
+
+
 
 .cancion-box {
   width: 300px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 15px; /* Ajusta el valor según tu preferencia */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   transition: transform 0.3s;
@@ -101,6 +105,7 @@ mat-card-title {
   top: -10px;
   background-color: #f4f4f4;
 }
+
 
 .cancion-box:hover {
   transform: scale(1.05);
@@ -112,7 +117,27 @@ h2 {
   font-size: 1.5rem;
   padding: 10px;
   background-color: #f4f4f4;
+  border-radius: 10px;
   border-bottom: 1px solid #ccc;
+  margin-bottom: 10px; /* Ajusta el valor según la separación que deseas */
 }
+.canciones-lista li {
+  width: 300px;
+  padding: 20px;
+  border-radius: 15px; /* Ajusta el valor según tu preferencia */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative;
+  top: -10px;
+  background-color: #f4f4f4;
+  margin-bottom: 20px; /* Ajusta el margen entre las canciones */
+}
+
+.canciones-lista li:hover {
+  transform: scale(1.05);
+}
+
+
 
 
