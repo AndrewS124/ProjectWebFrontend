@@ -20,7 +20,7 @@ export class RegisterComponent {
   ) {}
 
   handleRegister() {
-    
+
     const newUser = {
       nombre: this.usuario,
       contraseña: this.password,

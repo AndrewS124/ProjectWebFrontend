@@ -16,13 +16,13 @@ import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
 //MATERIAL
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { AdminComponent } from './componentes/admin/admin.component';
+import { AlertComponent } from './componentes/alert/alert.component';
 import { ListCancionesComponent } from './componentes/list-canciones/list-canciones.component';
 import { ListGenerosComponent } from './componentes/list-generos/list-generos.component';
-import { AlertComponent } from './componentes/alert/alert.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { AdminComponent } from './componentes/admin/admin.component';
 
 @NgModule({
   declarations: [

@@ -2,7 +2,7 @@
   <ng-container *ngFor="let genero of generos">
     <h2 (click)="toggleCanciones(genero)">{{ genero.tipo }}</h2>
     <ul class="canciones-lista" *ngIf="genero.mostrarCanciones">
-      <li *ngFor="let cancion of genero.canciones">
+      <li *ngFor="let cancion of genero.Lista">
         <p><strong>Nombre de la canción:</strong> {{ cancion.nombreCancion }}</p>
       </li>
     </ul>

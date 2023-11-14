@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UsuariosDTO } from '../../../../../../../../../../Pontificia Universidad Javeriana/ProyectoWeb/ProjectWebFrontend-main/FrontWeb/src/app/DTO/UsuariosDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,9 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {}
 
-  public getAllUsuarios(): Observable<any> {
-    return this.http.get<any>(this.baseUrl);
+  public getAllUsuarios(): Observable<UsuariosDTO[]> {
+    console.log('Realizando solicitud GET a: ' + this.baseUrl); // Agrega un mensaje de registro
+    return this.http.get<UsuariosDTO[]>(this.baseUrl);
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
+import { GeneroDTO } from 'src/app/DTO/GeneroDTO';
 import { GenerosService } from 'src/app/services/generos.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { GenerosService } from 'src/app/services/generos.service';
   styleUrls: ['./list-generos.component.css'],
 })
 export class ListGenerosComponent implements OnInit {
-  generos: any[] = [];
+  generos: GeneroDTO[] = [];
   searchText: string = '';
 
   constructor(private router: Router, private generoService: GenerosService) {}
@@ -30,13 +31,13 @@ export class ListGenerosComponent implements OnInit {
 
       forkJoin(observables).subscribe((canciones) => {
         canciones.forEach((cancionesPorGenero, index) => {
-          this.generos[index].canciones = cancionesPorGenero;
+          this.generos[index].Lista = cancionesPorGenero;
         });
       });
     });
   }
 
-  toggleCanciones(genero: any) {
+  toggleCanciones(genero: GeneroDTO) {
     genero.mostrarCanciones = !genero.mostrarCanciones;
   }
 

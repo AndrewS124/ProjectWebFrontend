@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './componentes/admin/admin.component';
 import { FuncionamientoComponent } from './componentes/funcionamiento/funcionamiento.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { ListCancionesComponent } from './componentes/list-canciones/list-canciones.component';
+import { ListGenerosComponent } from './componentes/list-generos/list-generos.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { RegisterComponent } from './componentes/register/register.component';
-import { ListCancionesComponent } from './componentes/list-canciones/list-canciones.component';
-import { ListGenerosComponent } from './componentes/list-generos/list-generos.component';
 import { AuthGuard } from './componentes/toolbar/auth.guard';
-import { AdminComponent } from './componentes/admin/admin.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},

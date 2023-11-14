@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 handleGeneros() {
   this.router.navigate(['/generos']);
 }
-  
+
 
 
   mostrarListaCanciones = false;
@@ -22,11 +22,11 @@ handleGeneros() {
 
   constructor( private router: Router,private cancionService: CancionService){}
 
-  
+
   handleCanciones() {
     this.router.navigate(['/canciones']);
   }
-  
+
   ngOnInit() {
     this.llenarDta();
   }

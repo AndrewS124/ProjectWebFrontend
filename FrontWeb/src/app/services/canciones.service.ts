@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { CancionDto } from '../../../../../../../../../../Pontificia Universidad Javeriana/ProyectoWeb/ProjectWebFrontend-main/FrontWeb/src/app/DTO/CancionDTO';
 
 @Injectable({
   providedIn: 'root',
@@ -10,27 +12,26 @@ export class CancionService {
 
   constructor(private http: HttpClient) {}
 
-  public getCanciones(): Observable<any> {
-    return this.http.get<any>(this.urlApi);
+  public getCanciones(): Observable<CancionDto[]> {
+    return this.http.get<CancionDto[]>(this.urlApi);
   }
 
   public agregarCancion(nombreCancion: string, autor: string): Observable<any> {
-    const nuevaCancion = { nombreCancion, autor };
+    const nuevaCancion = { nombreCancion, autor, usuarioAdmin: null, genero: null };
     return this.http.post(this.urlApi, nuevaCancion);
   }
 
   public eliminarCancion(id: number): Observable<any> {
-    const url = this.urlApi + id;
+    const url = `${this.urlApi}${id}`;
     return this.http.delete(url);
   }
 
   public obtenerIdCancionPorNombre(nombreCancion: string): Observable<number | null> {
     return this.getCanciones().pipe(
-      map((canciones: any[]) => {
+      map((canciones: CancionDto[]) => {
         const cancionEncontrada = canciones.find((cancion) => cancion.nombreCancion === nombreCancion);
         return cancionEncontrada ? cancionEncontrada.id : null;
       })
     );
   }
-
 }

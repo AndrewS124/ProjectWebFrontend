@@ -18,7 +18,10 @@ export class AuthService {
   authenticate(username: string, password: string) {
     return this.usuarioService.getAllUsuarios().pipe(
       map((usuarios: any[]) => {
-        const user = usuarios.find((u) => u.nombre === username && u.contraseña === password);
+        
+        
+        const user = usuarios.find((u) => u.nombre === username && u.contrasena === password);
+
         if (user) {
           this.tipoUsuarioLogged = user.tipo;
           this.usuarioData = { nombre: user.nombre, correo: user.correo };
