@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   authenticate(email: string, password: string): Observable<boolean> {
-    const loginData = {email, password}; // Modify this based on your DTO structure
+    const loginData = {email, password};
 
     return this.http.post<any>(`${this.baseUrl}${this.loginUrl}`, loginData).pipe(
       map((response) => {
@@ -38,6 +38,7 @@ export class AuthService {
       })
     );
   }
+
 
   private parseAndStoreToken(token: string): void {
     const tokenPayload = this.parseJwt(token);
@@ -99,8 +100,30 @@ export class AuthService {
     this.usuarioData = usuarioData;
   }
 
-  getUsuarioData(): { nombre: string, correo: string } | null {
-    return this.usuarioData;
+  hasValidToken(): boolean {
+    const token = localStorage.getItem(this.tokenKey);
+
+    if (token) {
+      const tokenPayload = this.parseJwt(token);
+      const expirationDate = tokenPayload.exp * 1000;
+
+      // Check if the token is not expired
+      let isTokenValid = Date.now() < expirationDate;
+      return isTokenValid;
+    }
+
+    return false;
+  }
+
+  getUsuarioData(): { nombre: string, email: string } | null {
+    const token = localStorage.getItem(this.tokenKey);
+
+    if (token) {
+      const tokenPayload = this.parseJwt(token);
+      return {nombre: tokenPayload.nombre, email: tokenPayload.email};
+    }
+
+    return null;
   }
 
 }

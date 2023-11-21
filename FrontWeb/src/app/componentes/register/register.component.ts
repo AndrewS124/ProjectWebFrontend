@@ -9,9 +9,10 @@ import { UsuarioVotanteService } from 'src/app/services/usuario-votante.service'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  usuario: string = '';
+  nombre: string = '';
+  email: string = '';
   password: string = '';
-  correo: string = '';
+  registrationError: string = '';
 
   constructor(
     private router: Router,
@@ -20,29 +21,20 @@ export class RegisterComponent {
   ) {}
 
   handleRegister() {
-
     const newUser = {
-      nombre: this.usuario,
-      contraseña: this.password,
-      correo: this.correo,
-      autenticacion: true,
-      tipo: 'Votante',
-      activacion: true,
+      nombre: this.nombre,
+      email: this.email,
+      password: this.password,
     };
 
     this.usuarioVService.registerUser(newUser).subscribe(
       (response) => {
-        this.authService.setUsuarioData({ nombre: newUser.nombre, correo: newUser.correo });
-
-        this.authService.isAuthenticated = true;
-        this.router.navigate(['/home']);
-
-        // Limpia los campos del formulario
-        this.usuario = '';
-        this.password = '';
-        this.correo = '';
+        // Redirect to login page on successful registration
+        this.router.navigate(['/login']);
       },
       (error) => {
+        // Display error message on registration failure
+        this.registrationError = 'Error en el registro';
         console.error('Error de registro:', error);
       }
     );

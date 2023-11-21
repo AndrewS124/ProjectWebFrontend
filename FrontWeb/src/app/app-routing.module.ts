@@ -18,9 +18,9 @@ const routes: Routes = [
     //contacto
 
   { path: 'register', component: RegisterComponent},
-  { path: 'perfil', component: PerfilComponent },
-  { path: 'canciones', component: ListCancionesComponent},
-  { path: 'generos', component: ListGenerosComponent},
+  { path: 'perfil', component: PerfilComponent , canActivate: [AuthGuard]},
+  { path: 'canciones', component: ListCancionesComponent, canActivate: [AuthGuard]},
+  { path: 'generos', component: ListGenerosComponent, canActivate: [AuthGuard]},
   { path: 'admin', component:AdminComponent}
 ];
 

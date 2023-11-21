@@ -1,17 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UsuarioVotanteDTO } from '../DTO/UsuarioVotanteDTO';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioVotanteService {
 
-  private urlApi = 'http://localhost:8080/UsuarioVotante/';
+  private urlApi = 'http://localhost:8080/auth'; // Update the URL
 
   constructor(private http: HttpClient) { }
 
-  registerUser(newUser: UsuarioVotanteDTO) {
-    return this.http.post(this.urlApi, newUser);
+  registerUser(newUser: any) {
+    return this.http.post(`${this.urlApi}/register`, newUser);
   }
 }
