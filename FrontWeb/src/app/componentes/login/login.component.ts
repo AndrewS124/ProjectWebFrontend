@@ -9,13 +9,13 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
+  email: string = '';
   password: string = '';
 
   constructor(private authService: AuthService, private router: Router, private alertService: AlertService) {}
 
   handleLogin() {
-    this.authService.authenticate(this.username, this.password).subscribe((isAuthenticated) => {
+    this.authService.authenticate(this.email, this.password).subscribe((isAuthenticated) => {
       if (isAuthenticated) {
         this.router.navigate(['/home']);
       } else {

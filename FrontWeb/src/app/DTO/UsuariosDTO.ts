@@ -1,8 +1,8 @@
 export interface UsuariosDTO {
-    id: number;
-    nombre: string;
-    correo: string;
-    tipo: string;
-    contraseña: string;
-    autentificacion: boolean;
-  }
+  id: number;
+  nombre: string;
+  email: string;
+  contraseña: string;
+  autenticacion: boolean;
+  tipo: string;
+}

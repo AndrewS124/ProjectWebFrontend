@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +23,7 @@ import { AdminComponent } from './componentes/admin/admin.component';
 import { AlertComponent } from './componentes/alert/alert.component';
 import { ListCancionesComponent } from './componentes/list-canciones/list-canciones.component';
 import { ListGenerosComponent } from './componentes/list-generos/list-generos.component';
+import {AuthInterceptor} from "./services/intercept.service";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,15 @@ import { ListGenerosComponent } from './componentes/list-generos/list-generos.co
     FormsModule,
     MatDialogModule
   ],
-  providers: [],
+
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

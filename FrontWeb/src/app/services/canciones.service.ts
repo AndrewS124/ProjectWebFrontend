@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { CancionDto } from '../../../../../../../../../../Pontificia Universidad Javeriana/ProyectoWeb/ProjectWebFrontend-main/FrontWeb/src/app/DTO/CancionDTO';
+import { CancionDto } from '../DTO/CancionDTO';
 
 @Injectable({
   providedIn: 'root',

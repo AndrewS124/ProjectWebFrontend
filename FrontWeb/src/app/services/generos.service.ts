@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { CancionDto } from '../../../../../../../../../../Pontificia Universidad Javeriana/ProyectoWeb/ProjectWebFrontend-main/FrontWeb/src/app/DTO/CancionDTO';
-import { GeneroDTO } from '../../../../../../../../../../Pontificia Universidad Javeriana/ProyectoWeb/ProjectWebFrontend-main/FrontWeb/src/app/DTO/GeneroDTO';
+import { CancionDto } from '../DTO/CancionDTO';
+import { GeneroDTO } from '../DTO/GeneroDTO';
 
 @Injectable({
   providedIn: 'root',

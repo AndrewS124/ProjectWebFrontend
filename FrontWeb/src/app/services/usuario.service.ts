@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UsuariosDTO } from '../../../../../../../../../../Pontificia Universidad Javeriana/ProyectoWeb/ProjectWebFrontend-main/FrontWeb/src/app/DTO/UsuariosDTO';
+import { UsuariosDTO } from '../DTO/UsuariosDTO';
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UsuarioVotanteDTO } from '../../../../../../../../../../Pontificia Universidad Javeriana/ProyectoWeb/ProjectWebFrontend-main/FrontWeb/src/app/DTO/UsuarioVotanteDTO';
+import { UsuarioVotanteDTO } from '../DTO/UsuarioVotanteDTO';
 
 @Injectable({
   providedIn: 'root'
