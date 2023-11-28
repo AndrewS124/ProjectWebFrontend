@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 
@@ -10,19 +10,40 @@ export class CancionService {
 
   constructor(private http: HttpClient) {}
 
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  private getHeaders(): HttpHeaders {
+    const token = this.getToken();
+    if (token) {
+      return new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      });
+    } else {
+      return new HttpHeaders();
+    }
+  }
+
   public getCanciones(): Observable<any> {
-    return this.http.get<any>(this.urlApi);
+    const headers = this.getHeaders();
+    return this.http.get<any>(this.urlApi, { headers });
   }
 
   public agregarCancion(nombreCancion: string, autor: string): Observable<any> {
     const nuevaCancion = { nombreCancion, autor };
-    return this.http.post(this.urlApi, nuevaCancion);
+    const headers = this.getHeaders();
+    return this.http.post(this.urlApi, nuevaCancion, { headers });
   }
 
   public eliminarCancion(id: number): Observable<any> {
-    const url = this.urlApi + id;
-    return this.http.delete(url);
+    const url = `${this.urlApi}${id}`;
+    const headers = this.getHeaders(); // Obtener los encabezados de autorización
+  
+    // Pasar los encabezados de autorización en la solicitud DELETE
+    return this.http.delete(url, { headers });
   }
+  
 
   public obtenerIdCancionPorNombre(nombreCancion: string): Observable<number | null> {
     return this.getCanciones().pipe(
@@ -32,6 +53,5 @@ export class CancionService {
       })
     );
   }
-  
   
 }

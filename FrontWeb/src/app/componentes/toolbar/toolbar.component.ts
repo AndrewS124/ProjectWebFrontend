@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { AlertService } from 'src/app/services/alert.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-toolbar',
@@ -13,11 +14,13 @@ export class ToolbarComponent {
     private router: Router,
     private authService: AuthService,
     private alertService: AlertService
-  ) {}
+  ) 
+  {  }
 
-  tipoUsuario(): String {
-    return this.authService.tipoUsuario(); // Llama al método del servicio para obtener el tipo de usuario
+  tipoUsuario(): Observable<string | null> {
+    return this.authService.tipoUsuario();
   }
+  
 
   isAuthenticated(): boolean {
     return this.authService.isAuthenticated;

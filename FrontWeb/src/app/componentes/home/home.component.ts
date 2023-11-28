@@ -8,12 +8,11 @@ import { CancionService } from 'src/app/services/canciones.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
 handleGeneros() {
   this.router.navigate(['/generos']);
 }
   
-
-
   mostrarListaCanciones = false;
   mostrarListaGeneros = false;
 
@@ -28,7 +27,7 @@ handleGeneros() {
   }
   
   ngOnInit() {
-    this.llenarDta();
+    
   }
 
   llenarDta(){

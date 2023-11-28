@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegisterService } from 'src/app/services/Register.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { UsuarioVotanteService } from 'src/app/services/usuario-votante.service';
 
 @Component({
   selector: 'app-register',
@@ -15,12 +15,11 @@ export class RegisterComponent {
 
   constructor(
     private router: Router,
-    private usuarioVService: UsuarioVotanteService,
+    private registerService: RegisterService,
     private authService: AuthService
   ) {}
 
   handleRegister() {
-    
     const newUser = {
       nombre: this.usuario,
       contraseña: this.password,
@@ -30,17 +29,9 @@ export class RegisterComponent {
       activacion: true,
     };
 
-    this.usuarioVService.registerUser(newUser).subscribe(
+    this.registerService.registerUser(newUser).subscribe(
       (response) => {
-        this.authService.setUsuarioData({ nombre: newUser.nombre, correo: newUser.correo });
-
-        this.authService.isAuthenticated = true;
         this.router.navigate(['/home']);
-
-        // Limpia los campos del formulario
-        this.usuario = '';
-        this.password = '';
-        this.correo = '';
       },
       (error) => {
         console.error('Error de registro:', error);

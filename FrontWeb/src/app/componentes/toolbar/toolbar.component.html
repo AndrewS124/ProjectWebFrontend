@@ -20,7 +20,7 @@
         <button mat-icon-button (click)="handleImagePerfilClick()">
           <mat-icon>account_circle</mat-icon>
         </button>
-        <button mat-icon-button *ngIf="tipoUsuario() == 'Admin'" (click)="handleAdminButton()">
+        <button mat-icon-button *ngIf="(tipoUsuario() | async) === 'Admin'" (click)="handleAdminButton()">
           <mat-icon>admin_panel_settings</mat-icon>
         </button>
       </ng-container>

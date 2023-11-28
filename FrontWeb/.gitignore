@@ -8,8 +8,10 @@
 
 # Node
 /node_modules
+/node_modules/.DS_Store
 npm-debug.log
 yarn-error.log
+
 
 # IDEs and editors
 .idea/

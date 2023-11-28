@@ -17,10 +17,18 @@ export class LoginComponent {
   handleLogin() {
     this.authService.authenticate(this.username, this.password).subscribe((isAuthenticated) => {
       if (isAuthenticated) {
-        this.router.navigate(['/home']);
+        this.authService.initializeUserData().subscribe((userDataInitialized) => {
+          if (userDataInitialized) {
+            this.router.navigate(['/home']);
+          } else {
+            this.alertService.openAlert('Error al obtener los datos del usuario');
+          }
+        });
       } else {
         this.alertService.openAlert('Usuario o Contraseña incorrecta');
       }
     });
   }
+  
+  
 }
